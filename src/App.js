@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import "reset-css";
+import Note from "./components/Note";
+import Reason from "./components/Reason";
+import Header from "./components/Header";
+import CameraPreview from "./components/CameraPreview";
+import Map from "./components/Map";
 
 function App() {
+  const [dataUri, setDataUri] = useState("");
+  const [note, setNote] = useState("");
+
+  function handleNoteChanged(e) {
+    e.preventDefault();
+    e.target && setNote(e.target.value);
+  }
+
+  function handleTakePhotoAnimationDone(dataUri) {
+    setDataUri(dataUri);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <Reason></Reason>
+      <Note note={note} handleNoteChanged={handleNoteChanged}></Note>
+      <CameraPreview
+        dataUri={dataUri}
+        handleTakePhotoAnimationDone={handleTakePhotoAnimationDone}
+      ></CameraPreview>
+      <Map></Map>
+      <button>Send</button>
     </div>
   );
 }
