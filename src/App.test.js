@@ -1,9 +1,17 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, wait, queries } from "@testing-library/react";
+import App from "./App";
+jest.mock("./components/Map.js", () => () => <div></div>);
+jest.mock("./components/Camera.js", () => () => <div></div>);
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App", () => {
+  function renderApp() {
+    return render(<App />);
+  }
+  it("starts on welcome screen", async () => {
+    const { ...queries } = renderApp();
+    await wait(() => {
+      expect(queries.getByText("Welcome Pedestrian!")).toBeTruthy();
+    });
+  });
 });
