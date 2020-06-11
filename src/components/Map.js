@@ -4,32 +4,21 @@ import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
 const containerStyle = {
   width: "325px",
-  height: "650px",
+  height: "460px",
   margin: "0 auto",
   position: "relative",
 };
 
-const _coords = {
-  lat: 40.758896,
-  lng: -73.98513,
-};
-
 function MapContainer(props) {
   const [isMounted, setIsMounted] = useState(false);
-  const [coords, setCoords] = useState(_coords);
-  navigator.geolocation.getCurrentPosition((position) => {
-    setCoords({
-      lat: position.coords.latitude,
-      lng: position.coords.longitude,
-    });
-  });
+  const { coords } = props;
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
   if (isMounted) {
     return (
-      <section className="app__map-container">
+      <div className="app__map-container">
         <Map
           initialCenter={coords}
           containerStyle={containerStyle}
@@ -39,7 +28,7 @@ function MapContainer(props) {
         >
           <Marker position={coords}></Marker>
         </Map>
-      </section>
+      </div>
     );
   } else return null;
 }

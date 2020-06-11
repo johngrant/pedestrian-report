@@ -5,7 +5,7 @@ import Preview from "./Preview";
 
 function CameraPreview({ dataUri, handleTakePhotoAnimationDone }) {
   return (
-    <section>
+    <div>
       {dataUri ? (
         <Preview dataUri={dataUri}></Preview>
       ) : (
@@ -13,7 +13,7 @@ function CameraPreview({ dataUri, handleTakePhotoAnimationDone }) {
           onTakePhotoAnimationDone={handleTakePhotoAnimationDone}
         ></Camera>
       )}
-    </section>
+    </div>
   );
 }
 
