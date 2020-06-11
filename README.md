@@ -8,4 +8,6 @@ This application is a small web app designed with the pedestrian's phone in mind
 
 # Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6kmWWsaBwto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Click on the screen shot to go to a demo of the product.
+
+[<img src="https://img.youtube.com/vi/6kmWWsaBwto/0.jpg" width="50%">](https://youtu.be/6kmWWsaBwto)
