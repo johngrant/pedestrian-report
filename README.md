@@ -10,4 +10,4 @@ This application is a small web app designed with the pedestrian's phone in mind
 
 Click on the screen shot to go to a demo of the product.
 
-[<img src="https://img.youtube.com/vi/6kmWWsaBwto/0.jpg" width="50%">](https://youtu.be/6kmWWsaBwto){:target="\_blank" rel="noopener"}
+[<img src="https://img.youtube.com/vi/6kmWWsaBwto/0.jpg" width="50%">](https://youtu.be/6kmWWsaBwto){:target="_blank" rel="noopener"}
